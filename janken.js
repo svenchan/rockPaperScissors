@@ -17,6 +17,12 @@ function game() {
             outcome = "You win! Paper beats rock";
         } else if(playerSelection === "scissors" && computerSelection === "paper"){
             outcome = "You win! Scissors beats paper";
+        }else if(playerSelection === "scissors" && computerSelection === "scissors"){
+                outcome = "A draw. Play again";
+        }else if(playerSelection === "rock" && computerSelection === "rock"){
+                outcome = "A draw. Play again";
+        }else if(playerSelection === "paper" && computerSelection === "paper"){
+                outcome = "A draw. Play again";
         } else {
             outcome = "You lost!"
         }
@@ -27,11 +33,30 @@ function game() {
     let playerSelection = playersChoice.toLowerCase();
     let computerSelection = getComputerChoice();
 
+
     let roundResult = playRound(playerSelection, computerSelection);
     console.log("Player: " + playerSelection);
     console.log("Computer:" + " " + computerSelection);
     console.log(roundResult);
     counter = counter += 1; 
+
+    /*function to count the player score by counting when the roundResult includes the word win.
+    the game works but the counter stays at 0;
+
+    function playerScore(word, string) {
+        let pointCounter = 0;
+        const words = string.split(" ");
+    
+        for (let i = 0; i < words.length; i++){
+            if(words[i].toLowerCase() === word.toLowerCase()){
+                pointCounter++;
+            }
+        }
+        return pointCounter;
+    }
+    wordToFind = "win";
+    const playerPoints = playerScore(roundResult, wordToFind);
+    console.log(`Player score: ${playerPoints}`); */
     }
 }
 
