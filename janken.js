@@ -24,3 +24,11 @@ let computerSelection = getComputerChoice();
 console.log("Player:" + " " + playerSelection);
 console.log("Computer:" + " " + computerSelection);
 console.log(playRound(playerSelection, computerSelection));
+
+/* Things to add
+- a prompt that asks for the user input.
+- function game that loops the round function 5 times.
+- a way of keeping the score of rounds won and lost. 
+    change the outcome tosomthing that is counatble??
+- a final score anouncement.
+- a prompt to start a new game. */
