@@ -6,11 +6,11 @@ return options[randomIndex];
 
 let computerScore = 0;
 let playerScore = 0;
+let counter = 0;
 
 function game() {
-
     let roundResult;
-    let counter = 0;
+
 
     while (counter < 5) {
     function playRound(playerSelection, computerSelection) {
@@ -30,13 +30,14 @@ function game() {
         } else {
             outcome = "You lost!"
         }
-        return outcome;
-        } 
 
+        } 
+    
     let playersChoice = prompt("Choose: Rock, paper or scissors");
     let playerSelection = playersChoice.toLowerCase();
     let computerSelection = getComputerChoice();
-
+    
+    roundResult = playRound();
 
     roundResult = playRound(playerSelection, computerSelection);
     console.log("Player: " + playerSelection);
@@ -54,31 +55,44 @@ function game() {
 
     }
 
+    let gameResult = {
+        outcome: roundResult,
+        roundsPlayed: counter
+        };
+
+    return gameResult;
 }
 
-game();
+function startGame(){
+    let gameResult = game();
 
-console.log("GAME OVER");
-console.log("player score: " + playerScore);
-console.log("Computer score: " + computerScore);
+    console.log("GAME OVER");
+    console.log("player score: " + playerScore);
+    console.log("Computer score: " + computerScore);
 
-if (playerScore > computerScore){
-    console.log("The winner is PLAYER");
+    if (playerScore > computerScore){
+        console.log("The winner is PLAYER");
     } else if (playerScore < computerScore){
-    console.log("The winner is COMPUTER");
+        console.log("The winner is COMPUTER");
     } else {
-    console.log("It's a draw");
+        console.log("It's a draw");
     }
 
-let playAgain = confirm("Do you want to play another game?");
 
-if (playAgain){
-    playerScore = 0;
-    computerScore = 0;
-    game();
-    } else {
-    alert("Thank you for playing");
-    }  
+    if (gameResult.roundsPlayed === 5){
+        let playAgain = confirm("Do you want to play another game?");
+
+        if (playAgain){
+            playerScore = 0;
+            computerScore = 0;
+            startGame();
+        } else {
+            alert("Thank you for playing");
+        }  
+    }
+}
+
+startGame();
 
 
 
