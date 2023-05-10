@@ -4,14 +4,12 @@ const randomIndex = Math.floor(Math.random() * options.length);
 return options[randomIndex];
 }
 
-let computerScore = 0;
-let playerScore = 0;
+let roundResult;
 
 function game() {
-
-    let roundResult;
+    let computerScore = 0;
+    let playerScore = 0;
     let counter = 0;
-
     while (counter < 5) {
     function playRound(playerSelection, computerSelection) {
         let outcome;
@@ -38,52 +36,22 @@ function game() {
     let computerSelection = getComputerChoice();
 
 
-    roundResult = playRound(playerSelection, computerSelection);
+    let roundResult = playRound(playerSelection, computerSelection);
     console.log("Player: " + playerSelection);
     console.log("Computer:" + " " + computerSelection);
     console.log(roundResult);
- 
-    if (/win/.test(roundResult)){
-	playerScore++;
-	} else if (/lost/.test(roundResult)){
-	computerScore++;
-	}
-    console.log("player score: " + playerScore);
-    console.log("Computer score: " + computerScore);
-    counter++; 
-
-    }
-
+    counter++;     
+    
 }
 
 game();
-
-console.log("GAME OVER");
-console.log("player score: " + playerScore);
-console.log("Computer score: " + computerScore);
-
-if (playerScore > computerScore){
-    console.log("The winner is PLAYER");
-    } else if (playerScore < computerScore){
-    console.log("The winner is COMPUTER");
-    } else {
-    console.log("It's a draw");
-    }
-
-let playAgain = confirm("Do you want to play another game?");
-
-if (playAgain){
-    playerScore = 0;
-    computerScore = 0;
-    game();
-    } else {
-    alert("Thank you for playing");
-    }  
-
-
-
+console.log("Player:" + " " + playerSelection);
+console.log("Computer:" + " " + computerSelection);
+console.log(roundResult);
 
 
 /* Things to add
-
+- a way of keeping the score of rounds won and lost. 
+    change the outcome tosomthing that is counatble??
+- a final score anouncement.
 - a prompt to start a new game. */
