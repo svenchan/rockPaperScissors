@@ -53,7 +53,12 @@ function game() {
         if (counter === 5){
             if (playerScore < computerScore){
                 console.log("You lost. The computer is the winner")
-            } else if
+            } else if (playerScore > computerScore) {
+                console.log("You won! You beat the computer")
+            } else if (playerScore === computerScore){
+                console.log("This game is a draw")
+            }
+            
             reStartGame();
         }
     }
