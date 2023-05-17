@@ -51,6 +51,9 @@ function game() {
         counter++;
 
         if (counter === 5){
+            if (playerScore < computerScore){
+                console.log("You lost. The computer is the winner")
+            } else if
             reStartGame();
         }
     }
@@ -59,10 +62,13 @@ function game() {
 
 function reStartGame() {
   let restart = prompt("Dou want to play another game?");
-  if (restart === "yes"){
+  let restartAnswer = restart.toLocaleLowerCase();
+  if (restartAnswer === "yes"){
     counter = 0;
     playerScore = 0;
     computerScore = 0;
+  } else if (restartAnswer === "no"){
+    alert("Thank you for playing");
   }
 
 }
