@@ -1,0 +1,58 @@
+/* スコアセクション */
+.score-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 15vh;
+  }
+  
+  
+  .score {
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border: 2px solid red;
+    width: 5%;
+    min-height: 5%;
+  }
+  
+  #player-score {
+    border: 2px solid green;
+  }
+
+  /* ボタンセクション */
+  .button-section, .computer-selection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border: 3px solid grey;
+    padding: 5%;
+
+  }
+  
+  #rock-box,
+  #paper-box,
+  #scissors-box {
+    display: inline-block;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* メッセージセクション */
+  .message {
+    text-align: center;
+  }
+  
+  .message-div {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

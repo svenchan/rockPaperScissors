@@ -6,8 +6,7 @@ function getComputerChoice() {
 
 let computerScore = 0;
 let playerScore = 0;
-let counter = 0;
-let outcome;
+
 
 
 function playRound(playerSelection, computerSelection) {
@@ -30,12 +29,19 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+    var computerScoreElement = document.getElementById("computerScore");
+    computerScoreElement.textContent = computerScore.toString();
+
+    var playerScoreElement = document.getElementById("playerScore");
+    playerScoreElement.textContent = playerScore.toString();
+    let outcome;
+    let counter = 0;
+
     while (counter < 5){
-        let playersChoice = prompt("Choose: Rock, paper or scissors");
-        let playerSelection = playersChoice.toLowerCase();
+        let playerSelection = prompt("Choose: Rock, paper or scissors").toLocaleLowerCase();
         let computerSelection = getComputerChoice();
 
-        outcome = playRound(playerSelection, computerSelection);
+        let outcome = playRound(playerSelection, computerSelection)
         console.log("Player: " + playerSelection);
         console.log("Computer:" + " " + computerSelection);
         console.log(outcome);

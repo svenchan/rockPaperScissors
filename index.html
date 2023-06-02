@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <script href="janken.js">
+    <script src="janken.js"></script>
+    <!--Score section-->
+    <section class="score-section">
+        <div class="score" id="playerScore"></div>
+        <div class="start">
+            <button id="start-game-btn" onclick="game()">Start Game</button>
+        </div>
+        <div class="score" id="computerScore"></div>
+    </section>
 
-    </script>
+    <section class="computer-selection">
+        <div id="rock-box">
+            <button id="rock-btn">Rock</button>
+        </div>
+        <div id="paper-box">
+            <button id="paper-btn">Paper</button>
+        </div>
+        <div id="scissors-box">
+            <button id="scissors-btn">Scissors</button>
+        </div>
+    </section>
+
+    
+    <section class="button-section">
+        <div id="rock-box">
+            <button id="rock-btn">Rock</button>
+        </div>
+        <div id="paper-box">
+            <button id="paper-btn">Paper</button>
+        </div>
+        <div id="scissors-box">
+            <button id="scissors-btn">Scissors</button>
+        </div>
+    </section>
+    <section class="message">
+        <div class="message-div"></div>
+    </section>
+    
+    
+
     
 </body>
 </html>
