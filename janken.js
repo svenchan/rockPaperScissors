@@ -1,11 +1,11 @@
+
+    
 function getComputerChoice() {
     const options = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
 }
 
-let computerScore = 0;
-let playerScore = 0;
 
 
 
@@ -29,13 +29,19 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    var computerScoreElement = document.getElementById("computerScore");
-    computerScoreElement.textContent = computerScore.toString();
-
-    var playerScoreElement = document.getElementById("playerScore");
-    playerScoreElement.textContent = playerScore.toString();
     let outcome;
     let counter = 0;
+    var computerScore = 0;
+    var playerScore = 0;
+
+    
+    var computerScoreElement = document.getElementById("computer-score");
+    var playerScoreElement = document.getElementById("player-score");
+    var outcomeNotification = document.getElementById("message-div");
+
+    computerScoreElement.textContent = computerScore.toString();
+    playerScoreElement.textContent = playerScore.toString();
+    outcomeNotification.textContent = "";
 
     while (counter < 5){
         let playerSelection = prompt("Choose: Rock, paper or scissors").toLocaleLowerCase();
@@ -45,6 +51,7 @@ function game() {
         console.log("Player: " + playerSelection);
         console.log("Computer:" + " " + computerSelection);
         console.log(outcome);
+        outcomeNotification.textContent = outcome.toString;
 
         if (outcome.includes("win")){
         playerScore++;
@@ -55,7 +62,9 @@ function game() {
         console.log("player score: " + playerScore);
         console.log("Computer score: " + computerScore);
         counter++;
-
+        computerScoreElement.textContent = computerScore.toString();
+        playerScoreElement.textContent = playerScore.toString();
+        
         if (counter === 5){
             if (playerScore < computerScore){
                 console.log("You lost. The computer is the winner")
@@ -65,13 +74,13 @@ function game() {
                 console.log("This game is a draw")
             }
             
-            reStartGame();
+            //reStartGame();
         }
     }
 
 }
 
-function reStartGame() {
+/*function reStartGame() {
   let restart = prompt("Dou want to play another game?");
   let restartAnswer = restart.toLocaleLowerCase();
   if (restartAnswer === "yes"){
@@ -82,7 +91,8 @@ function reStartGame() {
     alert("Thank you for playing");
   }
 
-}
-game();
+}*/
+//game();
+
 
 
