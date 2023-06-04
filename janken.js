@@ -41,7 +41,6 @@ function waitForButtonClick (element) {
 
     //Start Game function
 async function game() {
-    let outcome;
     let counter = 0;
     var computerScore = 0;
     var playerScore = 0;
@@ -101,29 +100,36 @@ async function game() {
         var outcomeNotification = document.getElementById("message-div");
         outcomeNotification.textContent = outcome;
 
+        // Score update
         if (outcome.includes("win")){
         playerScore++;
         } else if (outcome.includes("lost")){
         computerScore++;
         }
-        
-        console.log("player score: " + playerScore);
-        console.log("Computer score: " + computerScore);
         counter++;
         computerScoreElement.textContent = computerScore.toString();
         playerScoreElement.textContent = playerScore.toString();
         
         if (counter === 5){
+            var popUpContainer = document.getElementById("pop-up-container");
+            popUpContainer.style.display = "flex";
+
+            var closeButton = document.getElementById("close-pop-up");
+            var popUpContent = document.getElementById("pop-up-content");
+            
+            closeButton.addEventListener("click", function() {
+                popUpContainer.style.display = "none";
+            });
+
             if (playerScore < computerScore){
-                console.log("You lost. The computer is the winner")
+                popUpContent.textContent = "You lost. The computer is the winner";
             } else if (playerScore > computerScore) {
-                console.log("You won! You beat the computer")
+                popUpContent.textContent = "You won! You beat the computer";
             } else if (playerScore === computerScore){
-                console.log("This game is a draw")
+                popUpContent.textContent = "This game is a draw";
             }
         }
     }
-
 }
 
 
