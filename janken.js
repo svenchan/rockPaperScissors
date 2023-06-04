@@ -1,5 +1,5 @@
 
- // Computers coice   
+ // Computers choice   
 function getComputerChoice() {
     const options = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * options.length);
@@ -74,19 +74,12 @@ async function game() {
         });
 
         let rock = document.getElementById("rock-btn");
-        //rock.addEventListener("click", function(){
-           // rock.classList.add("button-clicked");
-      //  })
         let paper = document.getElementById("paper-btn");
-     //   paper.addEventListener("click", function(){
-       //     paper.classList.add("button-clicked");
-       // })
         let scissors = document.getElementById("scissors-btn");
-       // scissors.addEventListener("click", function(){
-         //   scissors.classList.add("button-clicked");
-       // })
+       
         
         // Player input
+
         //waits till a button is clicked then takes it's Id as a value
         let clickedElementId = await Promise.race([
             waitForButtonClick(rock),
@@ -104,12 +97,7 @@ async function game() {
 
         
         let computerSelection = getComputerChoice();
-
-        let outcome = playRound(playerSelection, computerSelection)
-        console.log("Player: " + playerSelection);
-        console.log("Computer:" + " " + computerSelection);
-        console.log(outcome);
-
+        let outcome = playRound(playerSelection, computerSelection);
         var outcomeNotification = document.getElementById("message-div");
         outcomeNotification.textContent = outcome;
 
@@ -133,26 +121,10 @@ async function game() {
             } else if (playerScore === computerScore){
                 console.log("This game is a draw")
             }
-            
-            //reStartGame();
         }
     }
 
 }
-
-/*function reStartGame() {
-  let restart = prompt("Dou want to play another game?");
-  let restartAnswer = restart.toLocaleLowerCase();
-  if (restartAnswer === "yes"){
-    counter = 0;
-    playerScore = 0;
-    computerScore = 0;
-  } else if (restartAnswer === "no"){
-    alert("Thank you for playing");
-  }
-
-}*/
-//game();
 
 
 
