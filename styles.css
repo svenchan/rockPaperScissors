@@ -44,6 +44,12 @@
     border: none;
     cursor: pointer;
   }
+
+  .button-clicked {
+    border: 3px solid #008080;
+    scale: 1.1;
+    
+  }
   
   /* メッセージセクション */
   .message {
@@ -55,4 +61,5 @@
     font-size: 18px;
     font-weight: bold;
   }
+
   

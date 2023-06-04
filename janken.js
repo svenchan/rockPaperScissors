@@ -6,7 +6,7 @@ function getComputerChoice() {
     return options[randomIndex];
 }
 
-//
+
 function playRound(playerSelection, computerSelection) {
         
     if(playerSelection === "rock" && computerSelection === "scissors"){
@@ -34,7 +34,7 @@ function waitForButtonClick (element) {
             //return element id
             resolve(element.id);
             //remove event listener
-            element.removeEvenlistener("click", handleClick);
+            element.removeEventListener("click", handleClick);
         });
     });
 }
@@ -49,18 +49,44 @@ async function game() {
     //Score update
     var computerScoreElement = document.getElementById("computer-score");
     var playerScoreElement = document.getElementById("player-score");
-    var outcomeNotification = document.getElementById("message-div");
-
     computerScoreElement.textContent = computerScore.toString();
     playerScoreElement.textContent = playerScore.toString();
-    outcomeNotification.textContent = "";
-
+    
     while (counter < 5){
         let playerSelection = "";
+
+        var buttons = document.querySelectorAll(".player-buttons");
+
+        function handleClick(event){
+            //targets button that trigered the event
+            var clickedButton = event.target;
+
+            //removes class from all buttons
+            buttons.forEach(function(button){
+                button.classList.remove("button-clicked");
+            })
+            //Ads class to clicked button
+            clickedButton.classList.add("button-clicked");
+        }
+
+        buttons.forEach(function(button){
+            button.addEventListener("click", handleClick)
+        });
+
         let rock = document.getElementById("rock-btn");
+        //rock.addEventListener("click", function(){
+           // rock.classList.add("button-clicked");
+      //  })
         let paper = document.getElementById("paper-btn");
+     //   paper.addEventListener("click", function(){
+       //     paper.classList.add("button-clicked");
+       // })
         let scissors = document.getElementById("scissors-btn");
+       // scissors.addEventListener("click", function(){
+         //   scissors.classList.add("button-clicked");
+       // })
         
+        // Player input
         //waits till a button is clicked then takes it's Id as a value
         let clickedElementId = await Promise.race([
             waitForButtonClick(rock),
@@ -77,14 +103,15 @@ async function game() {
         }
 
         
-        //let playerSelection = prompt("Choose: Rock, paper or scissors").toLocaleLowerCase();
         let computerSelection = getComputerChoice();
 
         let outcome = playRound(playerSelection, computerSelection)
         console.log("Player: " + playerSelection);
         console.log("Computer:" + " " + computerSelection);
         console.log(outcome);
-        outcomeNotification.textContent = outcome.toString;
+
+        var outcomeNotification = document.getElementById("message-div");
+        outcomeNotification.textContent = outcome;
 
         if (outcome.includes("win")){
         playerScore++;
