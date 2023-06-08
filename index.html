@@ -11,36 +11,43 @@
 <body>
     <!--Score section-->
     <section class="score-section">
-        <div class="score" id="player-score"></div>
-        <div class="start">
-            <button id="start-game-btn" onclick="game()">Start Game</button>
+        <div class="score-div">
+            <p class="score-txt">Player</p>
+                <div class="score">
+                    <div id="player-score">0</div>
+                </div>
         </div>
-        <div class="score" id="computer-score"></div>
+
+        <!--Start button-->
+        <div class="start">
+            <button class="btn" id="start-game-btn" onclick="game()">Start Game</button>
+        </div>
+
+        <div class="score-div">
+            <p class="score-txt">Computer</p>
+                <div class="score">
+                    <div id="computer-score">0</div>
+                </div>
+        </div>
     </section>
 
     <!--Computer choice section-->
-   <!-- <section class="computer-selection">
-        <div id="rock-box">
-            <button id="rock-btn">Rock</button>
+    <section class="computer-selection">
+        <div id="computer-choice">
+            <img src="" class="choice-img">
         </div>
-        <div id="paper-box">
-            <button id="paper-btn">Paper</button>
-        </div>
-        <div id="scissors-box">
-            <button id="scissors-btn">Scissors</button>
-        </div>
-    </section>-->
+    </section>
 
     <!--Player button section-->
     <section class="button-section">
         <div id="rock-box">
-            <img src="images/rock1.png" class="player-buttons" id="rock-btn"/>
+            <img src="images/rock1.png" class="btn player-buttons" id="rock-btn"/>
         </div>
         <div id="paper-box">
-            <img src="images/paper1.png" class="player-buttons" id="paper-btn"/>
+            <img src="images/paper1.png" class="btn player-buttons" id="paper-btn"/>
         </div>
         <div id="scissors-box">
-            <img src="images/scissors.png" class="player-buttons" id="scissors-btn"/>
+            <img src="images/scissors.png" class="btn player-buttons" id="scissors-btn"/>
         </div>
     </section>
 
