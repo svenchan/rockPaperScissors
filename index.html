@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Janken</title>
     
 </head>
 <body>
@@ -20,7 +21,10 @@
 
         <!--Start button-->
         <div class="start">
-            <button class="btn" id="start-game-btn" onclick="game()">Start Game</button>
+            <button id="start-game-btn" onclick="game()">Start Game</button>
+            <audio id="bell-sound">
+                <source src="/sounds/bell.wav" type="audio/wav">
+            </audio>
         </div>
 
         <div class="score-div">
@@ -42,12 +46,24 @@
     <section class="button-section">
         <div id="rock-box">
             <img src="images/rock1.png" class="btn player-buttons" id="rock-btn"/>
+            <audio id="rock-sound">
+                <source src="/sounds/stone.wav" type="audio/wav">
+            </audio>
+        </div>
         </div>
         <div id="paper-box">
             <img src="images/paper1.png" class="btn player-buttons" id="paper-btn"/>
+            <audio id="paper-sound">
+                <source src="/sounds/paper.wav" type="audio/wav">
+            </audio>
+        </div>
         </div>
         <div id="scissors-box">
             <img src="images/scissors.png" class="btn player-buttons" id="scissors-btn"/>
+            <audio id="scissors-sound">
+                <source src="/sounds/scissors.wav" type="audio/wav">
+            </audio>
+        </div>
         </div>
     </section>
 
@@ -61,6 +77,7 @@
     <!--pop up-->
     <div id="pop-up-container">
         <button id="close-pop-up">X</button>
+        <img src="" id="pop-up-img"/>
         <div id="pop-up-content">
         </div>
     </div>

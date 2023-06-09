@@ -25,6 +25,7 @@ div {
   }
   
   .score-txt{
+    color:rgba(10, 6, 17, 0.4);
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -38,7 +39,7 @@ div {
     align-self: center;
     border-radius: 10px;
     font-weight: bolder;
-    background-color: slategrey;
+    background-color: lightgrey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,18 +64,24 @@ div {
     padding: 12px;
     color: white;
     border-radius: 8px;
-    border: 1px solid rgb(7, 7, 41);
-    box-shadow: -2px -2px 4px rgba(13, 6, 27, 0.4);
+    box-shadow: 0px 17px 0px 0px #073b3b;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 32px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.05s;
   }
   
   #start-game-btn:hover{
     background-color: #30c5c5;
   }
+
+  #start-game-btn:active {
+    transform: translateY(7px);
+    box-shadow: 0px 10px 0px 0px #052c2c;
+  }
+
+
   /* Computer choice section */
   .computer-selection{
     display: flex;
@@ -117,13 +124,11 @@ div {
   }
 
   .btn:hover {
-    scale: 1.1;
+    scale: 1.05;
     box-shadow: 3px, 3px, 5px rgba(0, 0, 0, 0.4);
   }
   
   .button-clicked {
-    border: 3px solid #008080;
-    scale: 1.2;
   }
   
   /* message section */
@@ -132,9 +137,10 @@ div {
   }
   
   .message-div {
+    margin-top: 10px;
     padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 60px;
+    font-weight: bolder;
   }
 
   /* Pop up */
@@ -158,6 +164,10 @@ div {
     background-color: black;
     color: white;
     font-size: 40px;
+  }
+
+  #pop-up-img {
+    max-height: 80%;
   }
 
   

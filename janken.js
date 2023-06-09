@@ -39,6 +39,32 @@ function waitForButtonClick (element) {
     });
 }
 
+var startBtn = document.getElementById("start-game-btn");
+var startSound = document.getElementById("bell-sound");
+
+startBtn.addEventListener("click", function() {
+    startSound.play();
+});
+
+let rockBtn = document.getElementById("rock-btn");
+let rockSound = document.getElementById("rock-sound");
+rockBtn.addEventListener("click", function() {
+    rockSound.play();
+});
+
+let paperBtn = document.getElementById("paper-btn");
+let paperSound = document.getElementById("paper-sound");
+paperBtn.addEventListener("click", function() {
+    paperSound.play();
+});
+
+let scissorsBtn = document.getElementById("scissors-btn");
+let scissorsSound = document.getElementById("scissors-sound");
+scissorsBtn.addEventListener("click", function() {
+    scissorsSound.play();
+});
+
+
     //Start Game function
 async function game() {
     let counter = 0;
@@ -121,12 +147,16 @@ async function game() {
                 popUpContainer.style.display = "none";
             });
 
+            let popUpImg = document.getElementById("pop-up-img");
             if (playerScore < computerScore){
+                popUpImg.src = "/images/computerWin2.jpg"
                 popUpContent.textContent = "You lost. The computer is the winner";
             } else if (playerScore > computerScore) {
                 popUpContent.textContent = "You won! You beat the computer";
+                popUpImg.src = "/images/playerWin2.jpg"
             } else if (playerScore === computerScore){
                 popUpContent.textContent = "This game is a draw";
+                popUpImg.src = "/images/draw.jpg"
             }
         }
     }
