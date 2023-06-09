@@ -90,8 +90,10 @@ div {
     padding: 10px;
   }
 
+  #computer-box {
+    padding: 5px;
+  }
   #computer-choice {
-    border: 3px solid red;
     min-width: 10vw;
     max-height: 15vh;
     min-height: 15vh;
