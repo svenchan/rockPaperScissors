@@ -9,11 +9,6 @@ function getComputerChoice() {
     let computerChoice = getComputerChoice();
     let computerChoiceDisplay = document.getElementById("computer-choice");
 
-    function getRandomColor() {
-        let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        return color;
-    }
-    
 function playRound(playerSelection, computerSelection) {
     
     if(playerSelection === "rock" && computerSelection === "scissors"){
