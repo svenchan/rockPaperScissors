@@ -1,4 +1,5 @@
 /* scoresection */
+
 * {
   padding: 0;
   margin: 0;
@@ -20,8 +21,9 @@ div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: calc(13px + 1.5625vw);
     height: 15vh;
+    flex-shrink: 1;
   }
   
   .score-txt{
@@ -29,13 +31,13 @@ div {
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 30px;
+    font-size: 2.5rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-shadow: 2px 2px 4px rgba(37, 16, 16, 0.5);
   }
 
   .score {
-    padding: 10px;
+    padding: 1rem;
     align-self: center;
     border-radius: 10px;
     font-weight: bolder;
@@ -54,22 +56,23 @@ div {
   #player-score, #computer-score {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 24px;
+    font-size: 2rem;
     min-width: 3vw;
     min-height: 8vh;
   }
 
   #start-game-btn {
     background-color: #127e7e;
-    padding: 12px;
+    padding: calc(1px + 1.5625vw);
     color: white;
     border-radius: 8px;
     box-shadow: 0px 17px 0px 0px #073b3b;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 32px;
+    font-size: calc(1.2em + 1.5625vw);
     font-weight: 600;
     cursor: pointer;
     transition: 0.05s;
+    flex-shrink: 1;
   }
   
   #start-game-btn:hover{
@@ -105,24 +108,30 @@ div {
   .button-section {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 10px;
+    flex-shrink: 2;
   }
   
   #rock-box,
   #paper-box,
   #scissors-box {
-    display: inline-block;
+    display: flex;
+    flex-shrink: 1;
+    padding: 0%;
   }
   
   .player-buttons {
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: calc(10px + 1.5625vw) calc(20px + 1.5625vw);
     background-color: white;
     border: none;
     cursor: pointer;
     transition: 0.3s;
     border-radius: 7%;
+    width: calc(180px + 1.5625vw);
+    flex: content;
   }
 
   .btn:hover {
@@ -172,4 +181,85 @@ div {
     max-height: 80%;
   }
 
+  @media only screen and (max-width: 600px){
+
+    .score-txt{
+      color:rgba(10, 6, 17, 0.4);
+      padding: 10px;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-shadow: 2px 2px 4px rgba(37, 16, 16, 0.5);
+    }
+    .score {
+      padding: 0.5rem 0.7rem;
+      align-self: center;
+      border-radius: 10px;
+      font-weight: bolder;
+      background-color: lightgrey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      flex-grow: 1;
+      max-height: 10vh;
+      max-width: 5vw;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+    }
+
+    #start-game-btn {
+      background-color: #127e7e;
+      padding: calc(1px + 1.5625vw);
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0px 17px 0px 0px #073b3b;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: calc(1.2em + 1.5625vw);
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.05s;
+      flex-shrink: 1;
+    }
+    
+  
+    #start-game-btn:active {
+      transform: translateY(7px);
+      box-shadow: 0px 10px 0px 0px #052c2c;
+      background-color: #30c5c5;
+    }
+
+    /* button section */
+    .button-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: calc(5px + 1.5625vw);
+      flex-shrink: 2;
+    }
+    
+    #rock-box,
+    #paper-box,
+    #scissors-box {
+      display: flex;
+      flex-shrink: 1;
+      padding: 0%;
+    }
+    
+    .player-buttons {
+      padding: calc(5px + 1.5625vw) calc(3px + 1.5625vw);
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 7%;
+      width: calc(100px + 1.5625vw);
+      flex: content;
+    }
+  
+  
+  }
   
