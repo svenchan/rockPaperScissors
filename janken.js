@@ -12,22 +12,22 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     
     if(playerSelection === "rock" && computerSelection === "scissors"){
-        computerChoiceDisplay.src = "../images/scissors.png";
+        computerChoiceDisplay.src = "images/scissors.png";
         return "You win! Rock beats scissors";
     } else if(playerSelection === "paper" && computerSelection === "rock"){
-        computerChoiceDisplay.src = "../images/rock1.png";
+        computerChoiceDisplay.src = "images/rock1.png";
         return "You win! Paper beats rock";
     } else if(playerSelection === "scissors" && computerSelection === "paper"){
-        computerChoiceDisplay.src = "../images/paper1.png";
+        computerChoiceDisplay.src = "images/paper1.png";
         return "You win! Scissors beats paper";
     } else if (playerSelection === "scissors" && computerSelection === "scissors") { 
-        computerChoiceDisplay.src = "../images/scissors.png";
+        computerChoiceDisplay.src = "images/scissors.png";
         return "A draw. Play again";
     } else if (playerSelection === "rock" && computerSelection === "rock") {
-        computerChoiceDisplay.src = "../images/rock1.png";
+        computerChoiceDisplay.src = "images/rock1.png";
         return "A draw. Play again";
     } else if (playerSelection === "paper" && computerSelection === "paper") {
-        computerChoiceDisplay.src = "../images/paper1.png";
+        computerChoiceDisplay.src = "images/paper1.png";
         return "A draw. Play again";
     } else {
         return "You lost!";
