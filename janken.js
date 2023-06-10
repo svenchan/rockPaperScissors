@@ -158,14 +158,14 @@ async function game() {
 
             let popUpImg = document.getElementById("pop-up-img");
             if (playerScore < computerScore){
-                popUpImg.src = "../images/computerWin2.jpg"
+                popUpImg.src = "/images/computerWin2.jpg"
                 popUpContent.textContent = "You lost. The computer is the winner";
             } else if (playerScore > computerScore) {
                 popUpContent.textContent = "You won! You beat the computer";
-                popUpImg.src = "../images/playerWin2.jpg"
+                popUpImg.src = "/images/playerWin2.jpg"
             } else if (playerScore === computerScore){
                 popUpContent.textContent = "This game is a draw";
-                popUpImg.src = "../images/draw.jpg"
+                popUpImg.src = "/images/draw.jpg"
             }
         }
     }
